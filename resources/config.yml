@@ -1,0 +1,8 @@
+# Nie zaleca się edytowania chat-mute-status ręcznie a wyłącznie in-game
+
+# Jeżeli jest ustawione na ON oznacza to że chat na serwerze jest wyłączony 
+# i nikt nie może pisać oprócz osób uprawnionych
+chat-mute-status: off  
+
+
+chat-mute-active-message: "[MeetMate.net] > Chat na serverze jest wyłączony przez administracje"
