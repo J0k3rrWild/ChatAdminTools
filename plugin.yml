@@ -2,30 +2,21 @@
 name: ChatAdminTools
 version: 1.1.0
 main: J0k3rrWild\ChatAdminTools\Main
-api: 3.25.1
+api: 4.0.3
 website: https://github.com/J0k3rrWild
 author: J0k3rrWild
-commands:
- ca:
-  description: Główna komenda administracyjna chatu
-  permission: chatadmintools.command.chatadmintools
-  usage: /ca clear <reason>* | on/off
-  aliases: [chatadmintools, chatadmin]
 permissions:
  chatadmintools:
   default: op
   description: Daje uprawnienia do wszystkich komend administracyjncych chatu
-  children:
-    chatadmintools.bypass:
-      default: op
-      description: Daje uprawnienie omijania blokady chatu
-      children:
-       chatadmintools.clear:
-        default: op
-        description: Daje uprawnienie czyszczenia chatu
-        children:
-         chatadmintools.change:
-          default: op
-          description: Daje uprawnienia wyłączenia/włączenia chatu
+ chatadmintools.bypass:
+  default: op
+  description: Daje uprawnienie omijania blokady chatu
+ chatadmintools.clear:
+  default: op
+  description: Daje uprawnienie czyszczenia chatu 
+ chatadmintools.change:
+  default: op
+  description: Daje uprawnienia wyłączenia/włączenia chatu
        
 ...
