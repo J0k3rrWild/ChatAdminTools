@@ -1,6 +1,6 @@
 # ChatRewardEvent - for PMMP API 3.26.2
 
-You need this plugin for API 4.0.3 instead? [CLICK HERE](https://github.com/J0k3rrWild/ChatAdminTools/tree/api4)
+You need this plugin for API 4.0.3 instead? [CLICK HERE](https://github.com/J0k3rrWild/ChatAdminTools/releases/tag/api4)
 
 [![](https://poggit.pmmp.io/shield.state/ChatAdminTools)](https://poggit.pmmp.io/p/ChatAdminTools)
 
