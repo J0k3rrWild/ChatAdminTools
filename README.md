@@ -20,7 +20,7 @@ Permission: chatadmintools.change<br>
 Permission: chatadmintools.clear<br><br>
 
 Permission: ``chatadmintools.bypass`` - gives the permission to bypass the chat lock<br>
-Permission: ``chatadmintools`` - give you all plugin permissions<br>
+Permission: ``chatadmintools`` - give you all plugin permissions <br>
 
 
 
