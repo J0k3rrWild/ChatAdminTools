@@ -8,15 +8,15 @@ author: J0k3rrWild
 permissions:
  chatadmintools:
   default: op
-  description: Daje uprawnienia do wszystkich komend administracyjncych chatu
+  description: Gives permission to all chat administration commands
  chatadmintools.bypass:
   default: op
-  description: Daje uprawnienie omijania blokady chatu
+  description: gives the permission to bypass the chat lock
  chatadmintools.clear:
   default: op
-  description: Daje uprawnienie czyszczenia chatu 
+  description: Gives permission to clean the chat 
  chatadmintools.change:
   default: op
-  description: Daje uprawnienia wyłączenia/włączenia chatu
+  description: Gives permission to disable / enable chat
        
 ...

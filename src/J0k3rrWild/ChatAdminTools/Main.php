@@ -20,7 +20,7 @@ final class Main extends PluginBase implements Listener{
         $server = $this->getServer();
         $server->getCommandMap()->register("ca", new Ca($this));
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        $this->getLogger()->info(TF::GREEN."[ChatAdminTools] > Plugin załadowany pomyślnie");
+        $this->getLogger()->info(TF::GREEN."[ChatAdminTools] > Plugin and configs loaded");
 
     }
 
@@ -34,7 +34,7 @@ final class Main extends PluginBase implements Listener{
         if($config->get("chat-mute-status") == "off"){
             if(!$player->hasPermission("chatadmintools.bypass") || !$player->hasPermission("chatadmintools")){
             $player->sendMessage(TF::RED.$config->get("chat-mute-active-message"));
-            $event->setCancelled();
+            $event->cancel();
             }
         }else{
             return true;
