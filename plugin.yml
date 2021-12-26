@@ -7,25 +7,21 @@ website: https://github.com/J0k3rrWild
 author: J0k3rrWild
 commands:
  ca:
-  description: Główna komenda administracyjna chatu
+  description: Chat administrative command
   permission: chatadmintools.command.chatadmintools
   usage: /ca clear <reason>* | on/off
   aliases: [chatadmintools, chatadmin]
 permissions:
  chatadmintools:
   default: op
-  description: Daje uprawnienia do wszystkich komend administracyjncych chatu
-  children:
-    chatadmintools.bypass:
-      default: op
-      description: Daje uprawnienie omijania blokady chatu
-      children:
-       chatadmintools.clear:
-        default: op
-        description: Daje uprawnienie czyszczenia chatu
-        children:
-         chatadmintools.change:
-          default: op
-          description: Daje uprawnienia wyłączenia/włączenia chatu
-       
+  description: Gives permission to all chat administration commands
+ chatadmintools.bypass:
+  default: op
+  description: gives the permission to bypass the chat lock
+ chatadmintools.clear:
+  default: op
+  description: Gives permission to clean the chat 
+ chatadmintools.change:
+  default: op
+  description: Gives permission to disable / enable chat
 ...

@@ -17,7 +17,7 @@ class Main extends PluginBase implements Listener{
 
     public function onEnable(){
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        $this->getLogger()->info(TF::GREEN."[ChatAdminTools] > Plugin załadowany pomyślnie");
+        $this->getLogger()->info(TF::GREEN."[ChatAdminTools] > Plugin and configs loaded");
 
     }
 
@@ -32,9 +32,9 @@ class Main extends PluginBase implements Listener{
             case "clear":
                 if ($p->hasPermission("chatadmintools") || $p->hasPermission("chatadmintools.clear")){
                     if(isset($args[1])){
-                    $this->getServer()->broadcastmessage(TF::RED."\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n> Chat został wyczyszczony przez: ". $p->getName()."\n"."> Powód: ".$args[1]);
+                    $this->getServer()->broadcastmessage(TF::RED."\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n> Chat cleared by: ". $p->getName()."\n"."> Reason: ".$args[1]);
                 }else{
-                    $this->getServer()->broadcastmessage(TF::RED."\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n> Chat został wyczyszczony przez: ". $p->getName());
+                    $this->getServer()->broadcastmessage(TF::RED."\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n> Chat cleared by: ". $p->getName());
                 }
             }
             break;
@@ -42,19 +42,19 @@ class Main extends PluginBase implements Listener{
              if($p->hasPermission("chatadmintools.change") || $p->hasPermission("chatadmintools")){
                 $config = $this->getConfig();
 
-                $config->set("chat-mute-status", $option);
+                $config->set("chat-status", $option);
                 $config->save();
               
-                $this->getServer()->broadcastmessage(TF::RED."> Chat został włączony przez: ".$p->getName());
+                $this->getServer()->broadcastmessage(TF::RED."> Chat enabled by: ".$p->getName());
              }
                 break;
             case "off":
                 $config = $this->getConfig();
                 
-                $config->set("chat-mute-status", $option);
+                $config->set("chat-status", $option);
                 $config->save();
                 
-                $this->getServer()->broadcastmessage(TF::RED."> Chat został wyłączony przez: ".$p->getName());
+                $this->getServer()->broadcastmessage(TF::RED."> Chat disabled by: ".$p->getName());
                 break;
 
         }
@@ -66,7 +66,7 @@ class Main extends PluginBase implements Listener{
         $config = $this->getConfig();
         $event->getPlayer();
         $player = $event->getPlayer();
-        if($config->get("chat-mute-status") == "off"){
+        if($config->get("chat-status") == "off"){
             if(!$player->hasPermission("chatadmintools.bypass") || !$player->hasPermission("chatadmintools")){
             $player->sendMessage(TF::RED.$config->get("chat-mute-active-message"));
             $event->setCancelled();
