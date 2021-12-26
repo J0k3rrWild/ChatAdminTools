@@ -51,7 +51,7 @@ public function execute(CommandSender $p, string $label, array $args){
              if($p->hasPermission("chatadmintools.change") || $p->hasPermission("chatadmintools")){
                 $config = $this->plugin->getConfig();
 
-                $config->set("chat-mute-status", $option);
+                $config->set("chat-status", $option);
                 $config->save();
               
                 $this->plugin->getServer()->broadcastmessage(TF::RED."> Chat enabled by: ".$p->getName());
@@ -60,7 +60,7 @@ public function execute(CommandSender $p, string $label, array $args){
             case "off":
                 $config = $this->plugin->getConfig();
                 
-                $config->set("chat-mute-status", $option);
+                $config->set("chat-status", $option);
                 $config->save();
                 
                 $this->plugin->getServer()->broadcastmessage(TF::RED."> Chat disabled by: ".$p->getName());

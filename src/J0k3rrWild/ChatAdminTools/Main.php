@@ -31,7 +31,7 @@ final class Main extends PluginBase implements Listener{
         $config = $this->getConfig();
         $event->getPlayer();
         $player = $event->getPlayer();
-        if($config->get("chat-mute-status") == "off"){
+        if($config->get("chat-status") == "off"){
             if(!$player->hasPermission("chatadmintools.bypass") || !$player->hasPermission("chatadmintools")){
             $player->sendMessage(TF::RED.$config->get("chat-mute-active-message"));
             $event->cancel();
