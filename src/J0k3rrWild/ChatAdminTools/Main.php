@@ -20,7 +20,7 @@ final class Main extends PluginBase implements Listener{
         $server = $this->getServer();
         $server->getCommandMap()->register("ca", new Ca($this));
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        $this->getLogger()->info(TF::GREEN."[ChatAdminTools] > Plugin and configs loaded");
+        
 
     }
 
