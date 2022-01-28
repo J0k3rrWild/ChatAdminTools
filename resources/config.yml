@@ -1,4 +1,4 @@
-chat-status: on  # Chat status on = mute disabled
+chat-mute-status: "off"  # Chat-mute-status off = mute disabled
 
 
 chat-mute-active-message: "[ChatAdminTools] > Server chat is disabled by administrators" # The player sees this message when trying to write something while chat is turned off
