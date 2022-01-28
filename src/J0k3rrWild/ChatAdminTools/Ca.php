@@ -50,20 +50,22 @@ public function execute(CommandSender $p, string $label, array $args){
             case "on":
              if($p->hasPermission("chatadmintools.change") || $p->hasPermission("chatadmintools")){
                 $config = $this->plugin->getConfig();
-
-                $config->set("chat-status", $option);
+                
+                $this->chatStatus = "on";
+                $config->set("chat-mute-status", "on");
                 $config->save();
               
-                $this->plugin->getServer()->broadcastmessage(TF::RED."> Chat enabled by: ".$p->getName());
+                $this->plugin->getServer()->broadcastmessage(TF::RED."> Chat disabled by: ".$p->getName());
              }
                 break;
             case "off":
                 $config = $this->plugin->getConfig();
-                
-                $config->set("chat-status", $option);
+
+                $this->chatStatus = "off";
+                $config->set("chat-mute-status", "off");
                 $config->save();
                 
-                $this->plugin->getServer()->broadcastmessage(TF::RED."> Chat disabled by: ".$p->getName());
+                $this->plugin->getServer()->broadcastmessage(TF::RED."> Chat enabled by: ".$p->getName());
                 break;
 
         }

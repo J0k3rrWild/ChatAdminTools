@@ -12,33 +12,34 @@ use pocketmine\event\player\PlayerChatEvent;
 use pocketmine\command\Command;
 
 
-
-final class Main extends PluginBase implements Listener{
+class Main extends PluginBase implements Listener{
+public $config;
+public $chatStatus;
+public $chatMessage;
 
     public function onEnable() : void{
         
         $server = $this->getServer();
         $server->getCommandMap()->register("ca", new Ca($this));
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        
+        $this->config = $this->getConfig();
+        $this->chatStatus = $this->config->get("chat-mute-status");
+        $this->chatMessage = $this->config->get("chat-mute-active-message");
 
     }
 
    
 
     function onPlayerChat(PlayerChatEvent $event){
-        $this->reloadConfig();
-        $config = $this->getConfig();
+        
         $event->getPlayer();
         $player = $event->getPlayer();
-        if($config->get("chat-status") == "off"){
+        if($this->chatStatus === "on"){
             if(!$player->hasPermission("chatadmintools.bypass") || !$player->hasPermission("chatadmintools")){
-            $player->sendMessage(TF::RED.$config->get("chat-mute-active-message"));
+            $player->sendMessage(TF::RED.$this->chatMessage);
             $event->cancel();
             }
-        }else{
-            return true;
-        } 
+        }
     }
     
 
